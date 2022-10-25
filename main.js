@@ -83,9 +83,12 @@ function addBook() {
   const title = document.getElementById('inputBookTitle').value
   const author = document.getElementById('inputBookAuthor').value
   const year = document.getElementById('inputBookYear').value
+  const checked = document.getElementById('inputBookIsComplete').checked
+
+  console.log(checked)
 
   const generateID = generateId()
-  const bookObj = generateObject(generateID, title, author, year, false)
+  const bookObj = generateObject(generateID, title, author, year, checked)
   books.push(bookObj)
 
   console.log(books)
