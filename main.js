@@ -73,7 +73,14 @@ function makeBook(bookObject) {
     checkBook.addEventListener('click', function () {
       addBookToComplete(bookObject.id)
     })
-    containerAction.append(checkBook)
+    const deleteButton = document.createElement('button')
+    deleteButton.classList.add('red')
+    deleteButton.innerText = 'Hapus Buku'
+
+    deleteButton.addEventListener('click', function () {
+      removeBook(bookObject.id)
+    })
+    containerAction.append(checkBook, deleteButton)
   }
   container.append(containerAction)
   return container
